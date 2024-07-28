@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+{% endblock %}
+{% block content %}
+<section id="services" class="services">
+    <div class="container">
+        <h2>Our Services</h2>
+        <div class="service-items">
+           
+            <div class="service-item">
+                <a style="text-decoration: none;" href="{% url 'booking' %}">
+                <img src="{% static '/images/d2.jpg' %}" alt="Service 1">
+                <h3 style="color: black; ">Book Doctors</h3>
+                <p style="color: black;">24/7</p>
+            </a>
+            </div>
+            <div class="service-item">
+                <a style="text-decoration: none;" href="{% url 'doctors' %}">
+                <img src="{% static '/images/car5.jfif' %}" alt="Service 1">
+                <h3 style="color: black;">Book Doctors At ur Home </h3>
+                <p style="color: black;">24/7</p>
+            </a>
+            </div>
+            <div class="service-item">
+                <a style="text-decoration: none;" href="{% url 'lab' %}">
+                <img src="{% static '/images/car6.jfif' %}" alt="Service 1">
+                <h3 style="color: black;">Lab Tests</h3>
+                <p style="color: black;">24/7</p>
+            </a>
+            </div>
+            <div class="service-item">
+                <a style="text-decoration: none;" href="{% url 'call' %}">
+                <img src="{% static '/images/car7.jpg' %}" alt="Service 1">
+                <h3 style="color: black;">Book Ambulance</h3>
+                <p style="color: black;">24/7</p>
+            </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

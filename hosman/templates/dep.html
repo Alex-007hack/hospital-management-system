@@ -1,0 +1,31 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}
+{% endblock %}
+{% block content %}
+
+<section id="services" class="services">
+    <h2>Doctors</h2>
+    
+    <div class="container">
+        {% for d in dept %}
+        
+        <div class="doctor-items">
+            
+            
+            <div class="doctor-item">
+                
+                <h3>{{d.dep_name}}</h3>
+                <p>{{d.dep_decription}}</p>
+               
+            </div>
+           
+           
+        </div>
+        {% endfor %}  
+    </div>
+   
+</section>
+{% endblock %}

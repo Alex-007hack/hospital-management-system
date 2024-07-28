@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #c8ffbd;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(19, 138, 54, 0.923);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="date"],
+        input[type="file"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #1cc470;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body><CENTER>
+    <h1>Leave Application Form</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="fromDate">Email:</label>
+        <input type="text" id="fromDate" name="frommail" required><br><br>
+        
+        <label for="fromDate">From Date:</label>
+        <input type="date" id="fromDate" name="fromDate" required><br><br>
+        
+        <label for="toDate">To Date:</label>
+        <input type="date" id="toDate" name="toDate" required><br><br>
+
+        <label for="reason"> Reason:</label><br>
+        <textarea id="reason" name="reason" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required><br><br>
+
+        
+
+        <input type="submit"  name="submit" value="Submit">
+        <button type="button" onclick="window.history.back();">Back</button>
+    </form></CENTER>
+</body>
+</html>
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Status Update Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        select, input[type="text"], input[type="email"], input[type="date"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Update Status</h1>
+    <form method="post" action="">
+        {% csrf_token %}
+        <label for="status">Status</label>
+        <select id="status" name="estatus">
+            <option value="approve">Approve</option>
+            <option value="decline">Decline</option>
+        </select>
+
+        <label for="reason">Reason</label>
+        <textarea id="reason" name="ereason" rows="4"></textarea>
+
+        <label for="date">Date</label>
+        <input type="date" id="date" name="edate">
+
+   
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>

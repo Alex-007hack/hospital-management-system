@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="{% static '/css/asd.css/' %}">
+</head>
+<body>
+    <div class="payment-container">
+       
+        <h2>Payment Information</h2>
+        <center>
+        <h5>Service Charge:250.00</h5>
+        <h5>Gst:25.00</h5>
+        <h5>Tax:25.00</h5>
+        <h6>Discount:10.00</h6>
+        <h5>Total:290.00</h5>
+    </center>
+  
+        <div class="tab">
+            <button class="tablinks" onclick="openPayment(event, 'Card')">Card</button>
+            <button class="tablinks" onclick="openPayment(event, 'UPI')">UPI</button>
+            <button class="tablinks" onclick="openPayment(event, 'QR')">QR Code</button>
+        </div>
+        
+        <div id="Card" class="tabcontent">
+            <form action="/submit-payment" method="POST">
+                <div class="form-group">
+                    <label for="cardholder-name">Cardholder Name</label>
+                    <input type="text" id="cardholder-name" name="cardholder-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="card-number">Card Number</label>
+                    <input type="text" id="card-number" name="card-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiry-date">Expiry Date</label>
+                    <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" required>
+                </div>
+                <button type="submit" class="submit-btn">Submit Payment</button>
+            </form>
+        </div>
+        
+        <div id="UPI" class="tabcontent">
+            <form action="/submit-payment" method="POST">
+                <div class="form-group">
+                    <label for="upi-id">UPI ID</label>
+                    <input type="text" id="upi-id" name="upi-id" required>
+                </div>
+                <button type="submit" class="submit-btn">Submit Payment</button>
+            </form>
+        </div>
+        
+        <div id="QR" class="tabcontent">
+            <p>Scan the QR code below to complete your payment:</p>
+            <img src="{% static '/images/qrcode.png' %}" alt="QR Code" class="qr-code">
+        </div>
+    </div>
+
+    <script>
+        function openPayment(evt, paymentMethod) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(paymentMethod).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        document.getElementsByClassName("tablinks")[0].click();
+    </script>
+</body>
+</html>

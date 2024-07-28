@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+{% endblock %}
+{% block content %}
+<h1 class="text-center">Our Doctors</h1>
+<hr>
+
+<div class="container text-center bg-light">
+    {% for d in doctors%}
+    <a style="text-decoration: none;" href="{% url 'confirm' %}">
+    <div class="card text-center mx-3 my-3" style="width: 18rem; height:auto; display:inline-block">
+        <img src="{{d.doc_image.url}}" class="card-img-top" alt="..." style="height: 10rem;">
+        <div class="card-body">
+            <h5 class="card-title" style="color: blueviolet;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Dr. {{d.doc_name}}</h5>
+            <p class="card-text">{{d.doc_spec}}</p>
+            <p>MBBS</p>
+            <h6>{{d.dep_name}} Department</h6>
+            
+           
+        
+        </div>
+    </div>
+    {% endfor %}
+    </a>
+</div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{% static '/css/styles6.css/' %}">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Admin Dashboard</h2>
+        <ul>
+            <li><a href="{% url 'userregister' %}">Create Doctor</a></li>
+            <li><a href="{% url 'viewcomplaint' %}">View Dr Leave</a></li>
+            <li><a href="{% url 'viewdrat' %}">View Dr Attendance</a></li>
+            <li><a href="{% url 'userregister1' %}">Create Nurse</a></li>
+            <li><a href="{% url 'viewcomplaint1' %}">View Nurse Leave</a></li>
+            <li><a href="{% url 'nusattview' %}">View Nurse Attendance</a></li>
+            <li><a href="{% url 'home' %}">Logout</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Welcome to the Admin Dashboard</h1>
+        </header>
+        <section class="content">
+            
+           
+            
+        </section>
+    </div>
+</body>
+</html>

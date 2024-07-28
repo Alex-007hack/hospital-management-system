@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nurse Form</title>
+    <link rel="stylesheet" href="{% static '/css/styles8.css/' %}">
+</head>
+<body>
+    <div class="container">
+        <h2> Nurse Attendance Form</h2>
+        <form  method="POST">
+            {% csrf_token %}
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="dtname" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="dtemail" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="dtdate" required>
+
+            <label for="status">Attendance Status:</label>
+            <select id="status" name="dtstatus" required>
+                <option value="present">Present</option>
+                <option value="absent">Absent</option>
+                <option value="late">Half Day</option>
+                <option value="late">Early Going</option>
+                <option value="late">Late</option>
+            </select>
+
+            <label for="comments">Comments:</label>
+            <textarea id="comments" name="dtcomment" rows="4" cols="50"></textarea>
+
+            <button type="submit">Submit</button>
+            <button type="button" onclick="window.history.back();">Back</button>
+        </form>
+    </div>
+</body>
+</html>

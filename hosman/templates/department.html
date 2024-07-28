@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% endblock %}
+{% block content %}
+<h1 class="text-center "> Our Departments </h1>
+<hr>
+
+<div class="container text-center bg-dark">
+    {% for d in dept%}
+    <div class="card text-center mx-3 my-3" style="width: 18rem; height:auto; display:inline-block">
+     
+        <div class="card-body">
+           <marquee> <h5 class="card-title" style="color: blueviolet;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">{{d.dep_name}}</h5></marquee>
+            <p class="card-text" style="text-align: justify;">   <p>{{d.dep_decription}}</p></p>
+       
+            
+           
+        
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+

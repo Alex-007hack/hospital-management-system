@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management</title>
+    <link rel="stylesheet" href="{% static '/css/styles3.css/' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Hospital Management</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#doctors">Doctors</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <img src="{% static '/images/d2.jpg' %}" alt="Hospital Image">
+        <div class="hero-text">
+            <h2>Welcome to Our Hospital</h2>
+            <p>Your health is our priority.</p>
+            
+        </div>
+    </section>
+    
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            {% for d in dept %}
+            <div class="service-items">
+             
+                <div class="service-item">
+                    <img src="images/service1.jpg" alt="Service 1">
+                    <h3>{{d.dep_name}}</h3>
+                    <p>{{d.dep_decription}}</p>
+                </div>
+                
+            </div>
+            
+            {% endfor %}  
+        </div>
+    </section>
+    
+    <section id="doctors" class="doctors">
+        <h2>Doctors</h2>
+        {% for d in doctors %}
+        <div class="container">
+        
+            
+            <div class="doctor-items">
+                
+                <div class="doctor-item">
+                    
+                    <h3>Dr. {{d.doc_name}}</h3>
+                    <p>{{d.dep_name}} Department</p>
+                   
+                </div>
+               
+                
+            </div>
+           
+        </div>
+        {% endfor %} 
+    </section>
+    
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>What Our Patients Say</h2>
+            <div class="testimonial-items">
+                <div class="testimonial-item">
+                    <p>"Excellent care and friendly staff!"</p>
+                    <h4>- Patient A</h4>
+                </div>
+                <div class="testimonial-item">
+                    <p>"Highly recommend this hospital!"</p>
+                    <h4>- Patient B</h4>
+                </div>
+                <div class="testimonial-item">
+                    <p>"Professional and compassionate service."</p>
+                    <h4>- Patient C</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Hospital Management. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard</title>
+    <link rel="stylesheet" href="{% static '/css/styles6.css/' %}">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Nurse Dashboard</h2>
+        <ul>
+            <li><a href="{% url 'markatt' %}">Mark Attendeance</a></li>
+            <li><a href="{% url 'usercomp1' %}">Apply leave</a></li>
+            <li><a href="{% url 'mycomplaint1' %}">My leave</a></li>
+
+        
+            <li><a href="{% url 'home' %}">Logout</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Welcome to the Nurse Dashboard</h1>
+        </header>
+        
+    </div>
+</body>
+</html>

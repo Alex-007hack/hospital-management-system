@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{% static '/css/style01.css/' %}">
+</head>
+<body>
+
+    <div class="wrapper animated bounce">
+        <h1>Admin Login</h1>
+        <hr>
+        <form method="POST">
+         {% csrf_token %}
+      
+      <br>    
+          /<input type="text" placeholder="Username" id="username" name="mail"><br><br>
+          /<input type="password" placeholder="Password" id="password" name="password"><br>
+          <br>
+          <input type="submit" value="Login">
+          <hr>
+          
+        </form>
+      </div>
+      </body>
+</html>

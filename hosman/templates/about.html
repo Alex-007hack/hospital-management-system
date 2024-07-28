@@ -1,0 +1,39 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+{% endblock %}
+{% block content %}
+
+
+<section class="about_section layout_padding">
+    <div class="container  ">
+      <div class="row">
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="{% static '/images/about-img.jpg' %}" alt="">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                About <span>Hospital</span>
+              </h2>
+            </div>
+            <p >
+                Ava Hospital, established in 2010, is a premier healthcare institution renowned for its state-of-the-art facilities and patient-centric approach. Located in the heart of the city, the hospital is easily accessible and serves a diverse population. Ava Hospital is equipped with cutting-edge medical technology and offers a comprehensive range of services, including emergency care, surgery, diagnostics, and specialty treatments across various medical disciplines.
+
+                The hospital prides itself on its team of highly skilled and experienced healthcare professionals who are dedicated to providing the highest quality of care. With a strong emphasis on patient safety and comfort, Ava Hospital has designed its environment to be welcoming and conducive to healing. The hospital's multidisciplinary team collaborates to ensure personalized treatment plans, catering to the unique needs of each patient.
+                
+                Ava Hospital also places a significant emphasis on medical research and education. It hosts regular training programs, workshops, and conferences to keep its staff updated with the latest advancements in medical science. The hospital’s research wing is actively involved in clinical trials and innovative studies aimed at improving patient outcomes.
+            </p>
+            <a href="{% url 'about1' %}">
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock %}

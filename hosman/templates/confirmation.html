@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="{% static '/css/style1.css/' %}">
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Payment Information</h2>
+        <div class="tab">
+            <button class="tablinks" onclick="openPaymentMethod(event, 'CreditCard')">Credit Card</button>
+            <button class="tablinks" onclick="openPaymentMethod(event, 'DebitCard')">Debit Card</button>
+            <button class="tablinks" onclick="openPaymentMethod(event, 'UPI')">UPI</button>
+        </div>
+
+        <div id="CreditCard" class="tabcontent">
+            <form action="/submit-payment" method="POST">
+                <div class="form-group">
+                    <label for="cc-cardholder-name">Cardholder Name</label>
+                    <input type="text" id="cc-cardholder-name" name="cc-cardholder-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="cc-card-number">Card Number</label>
+                    <input type="text" id="cc-card-number" name="cc-card-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="cc-expiry-date">Expiry Date</label>
+                    <input type="text" id="cc-expiry-date" name="cc-expiry-date" placeholder="MM/YY" required>
+                </div>
+                <div class="form-group">
+                    <label for="cc-cvv">CVV</label>
+                    <input type="text" id="cc-cvv" name="cc-cvv" required>
+                </div>
+                <button type="submit" class="submit-btn">Submit Payment</button>
+            </form>
+        </div>
+
+        <div id="DebitCard" class="tabcontent">
+            <form action="/submit-payment" method="POST">
+                <div class="form-group">
+                    <label for="dc-cardholder-name">Cardholder Name</label>
+                    <input type="text" id="dc-cardholder-name" name="dc-cardholder-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="dc-card-number">Card Number</label>
+                    <input type="text" id="dc-card-number" name="dc-card-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="dc-expiry-date">Expiry Date</label>
+                    <input type="text" id="dc-expiry-date" name="dc-expiry-date" placeholder="MM/YY" required>
+                </div>
+                <div class="form-group">
+                    <label for="dc-cvv">CVV</label>
+                    <input type="text" id="dc-cvv" name="dc-cvv" required>
+                </div>
+                <button type="submit" class="submit-btn">Submit Payment</button>
+            </form>
+        </div>
+
+        <div id="UPI" class="tabcontent">
+            <form action="/submit-payment" method="POST">
+                <div class="form-group">
+                    <label for="upi-id">UPI ID</label>
+                    <input type="text" id="upi-id" name="upi-id" required>
+                </div>
+                <button type="submit" class="submit-btn">Submit Payment</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openPaymentMethod(evt, paymentMethod) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(paymentMethod).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        document.getElementsByClassName("tablinks")[0].click();
+    </script>
+</body>
+</html>

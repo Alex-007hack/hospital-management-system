@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #d7f0f5;
+        margin: 0;
+        padding: 0;
+
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    form {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+        box-shadow: 0 0 20px rgba(172, 43, 179, 0.1);
+        background-color: #ffffff;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    th,
+    td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #2e152b;
+    }
+
+    th {
+        background-color:   rgb(118, 108, 255);
+        color: #ffffff;
+    }
+
+    tr:hover {
+        background-color: rgba(24, 15, 120, 0.108);
+    }
+
+    a {
+        text-decoration: none;
+        color: #3498db;
+        transition: color 0.3s;
+        font-weight: bold;
+    }
+
+    a:hover {
+        color: #2980b9;
+    }
+
+    /* Responsive styles */
+    @media only screen and (max-width: 600px) {
+        table {
+            width: 100%;
+        }
+
+        th,
+        td {
+            display: block;
+            width: 100%;
+        }
+    }
+</style>
+<center>
+    <h1>LEAVE DETAILS</h1>
+</center>
+
+<table align="center" border="1">
+    <tr>
+        <th>NAME</th>
+        <th>FROM DATE</th>
+        <th>TO DATE</th>
+        
+        <th>DATE</th>
+        <th>REASON</th>
+        
+    </tr>
+    {% for i in de %}
+<tr>
+    <td>{{i.from_name}}</td>
+    <td>{{i.from_date}}</td>
+    <td>{{i.to_date}}</td>
+    
+    <td>{{i.idate}}</td>
+    <td>{{i.reason}}</td>
+    <td> <button type="button" onclick="window.history.back();">Back</button></td>
+   
+</tr>
+    {% endfor %}
+</table>
+
+    
+</body>
+</html>
